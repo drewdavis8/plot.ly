@@ -15,7 +15,7 @@ function buildMetadata(sample) {
 
   function buildCharts(sample) {
 
-    // Use `d3.json` to fetch the sample data for the plots
+    // use `d3.json` to  get the sample data for the plots
     d3.json("samples.json").then((data) => {
       var samples= data.samples;
       var resultsarray= samples.filter(sampleobject => 
@@ -71,10 +71,11 @@ function buildMetadata(sample) {
     });
     }
     function init() {
+
     // refer to the dropdown select element
     var selector = d3.select("#selDataset");
     
-    // Use the list of sample names to populate the select options
+    // use the list of sample names to populate the select options
     d3.json("samples.json").then((data) => {
       var sampleNames = data.names;
       sampleNames.forEach((sample) => {
@@ -84,7 +85,7 @@ function buildMetadata(sample) {
           .property("value", sample);
       });
     
-      // Use the first sample from the list to build the initial plots
+      // use the first sample from the list to build the initial plots
       const firstSample = sampleNames[0];
       buildCharts(firstSample);
       buildMetadata(firstSample);
@@ -92,7 +93,8 @@ function buildMetadata(sample) {
     }
     
     function optionChanged(newSample) {
-    // Fetch new data each time a new sample is selected
+
+    // get new data each time a new sample is selected
     buildCharts(newSample);
     buildMetadata(newSample);
     }
