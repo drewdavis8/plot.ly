@@ -35,7 +35,6 @@ function buildMetadata(sample) {
 
         var DataBubble = [ 
         {
-
           x: ids,
           y: values,
           text: labels,
@@ -46,7 +45,6 @@ function buildMetadata(sample) {
             }
         }
       ];
-    
       Plotly.newPlot("bubble", DataBubble, LayoutBubble);
     
     
